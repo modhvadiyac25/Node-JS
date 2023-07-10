@@ -1,3 +1,14 @@
+// const http = require('http');
+
+// const server = http.createServer((req, res) => {
+//     console.log("request event");
+//     res.end("hello word");
+// });
+
+// server.listen(5000, () => {
+//     console.log("listening on 5000 ...");
+// });
+
 const http = require('http');
 // const { writeFileSync } = require('fs');
 
@@ -17,7 +28,8 @@ const server = http.createServer((req, res) => {
     }
 
     if (req.url === '/about') {
-        for (let i = 0; i < 1000; i++) {
+        //BLOCKING CODE
+        for (let i = 0; i < 10; i++) {
             for (let j = 0; j < 1000; j++) {
                 console.log(`${i} and ${j}`);
             }
